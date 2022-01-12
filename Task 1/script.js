@@ -10,11 +10,25 @@ Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 ------------------------------------------------------------------- */
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
-    let userInput = document.querySelector('#search').value;
-    let svarai = userInput * 2.2046 + 'lb';
-    let gramai = userInput / 0.001 + 'g';
-    let uncijos = userInput * 35.274 + 'oz';
+    const userInput = document.querySelector('#search').value;
+    const svarai = userInput * 2.2046 + 'lb';
+    const gramai = userInput / 0.001 + 'g';
+    const uncijos = userInput * 35.274 + 'oz';
     let output = document.querySelector('#output');
-    output.textContent = `${userInput}kg is: ${svarai}, ${gramai}, ${uncijos}`;
     document.querySelector('form').reset();
+    // add heading
+    let myHeading = document.createElement('h1');
+    myHeading.textContent = `${userInput}kg is:`
+    // add pounds
+    let pounds = document.createElement('h2');
+    pounds.textContent = svarai;
+    // add grams
+    let grams = document.createElement('h2');
+    grams.textContent = gramai;
+    // add oz
+    let oz = document.createElement('h2');
+    oz.textContent = uncijos;
+    // append
+    output.append(myHeading, pounds, grams, oz);
+   
 })
