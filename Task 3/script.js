@@ -17,15 +17,23 @@ const ENDPOINT = 'https://api.github.com/users';
 document.querySelector('#btn').addEventListener('click', showUsers);
 
 function showUsers(){
-    document.querySelector('#message').textContent = '';
+    const message = document.querySelector('#message');
+    message.remove();
     fetch(ENDPOINT)
     .then(resp => resp.json())
     .then(data => {
         console.log(data);
         data.forEach(element => {
-            let userInfo = document.createElement('div');
-            userInfo.textContent = `${element.login} ${element.avatar_url}`;
-            document.querySelector('#output').append(userInfo);
+            let userCard = document.createElement('div');
+            // Create and assign userName
+            let userName = document.createElement('h2');
+            userName.textContent = `Name: ${element.login}`
+            // Create and assing avatarUrl
+            let avatarUrl = document.createElement('h4');
+            avatarUrl.textContent = element.avatar_url;
+            // Append userName and avatarUrl to userCard
+            userCard.append(userName, avatarUrl);
+            document.querySelector('#output').append(userCard);
         });
     });
 }
