@@ -27,3 +27,25 @@
   margin-top: 50px;
   color: #333;
 }
+
+
+#output {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  width: 80%;
+  gap: 15px;
+  
+}
+
+
+#output #card {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+#output #card h1 {
+  margin: 20px 0;
+}

@@ -19,3 +19,21 @@ const users = [
   { id: '8', name: 'Simon Peterson', age: 30 },
   { id: '9', name: 'Daniel Cane', age: 51 },
 ];
+
+// Users amžiaus vidurkis
+let initialValue = 0;
+function getUserAverage(array) {
+  let total = array.reduce((a, b) => (a + b.age), initialValue);
+  let average = total / array.length;
+  return Math.round(average);
+}
+
+console.log(getUserAverage(users));
+
+
+// Users vardų masyvas
+function getUsersNames(array){
+  return array.map(x => x.name);
+}
+
+console.log(getUsersNames(users));

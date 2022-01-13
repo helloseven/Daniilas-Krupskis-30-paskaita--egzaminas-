@@ -52,6 +52,31 @@ form {
   color: #fff;
 }
 
+#output {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#output h1 {
+  margin: 20px 0;
+}
+
+#output h2 {
+  margin: 10px 0;
+}
+
+#output h2:nth-child(2) {
+  color:cadetblue;
+}
+
+#output h2:nth-child(3) {
+  color:chocolate;
+}
+
+#output h2:nth-child(4) {
+  color:darkgreen;
+}
 /* Tablet */
 @media screen and (min-width: 768px) {
   .headline {
